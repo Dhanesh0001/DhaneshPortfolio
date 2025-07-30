@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mendala Dhanesh - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</head>
+<style>
+        /* Basic styling for mobile */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #09868f;
+            padding-top: 20px;
+            z-index: 100;
+        }
+
+        .sidebar .nav-link {
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .profile-img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .resume-btn {
+            margin-top: 20px;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        /* Adjust container and content on all screens */
+        .container {
+            margin-left: 270px;
+        }
+
+        .home,
+        .section {
+            padding: 20px;
+        }
+
+        .home {
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 1024px) { /* Tablet screens */
+            .container {
+                margin-left: 270px;
+            }
+
+            .sidebar {
+                width: 230px;
+            }
+
+            .profile-img {
+                width: 120px;
+            }
+
+            .home h1 {
+                font-size: 28px;
+            }
+
+            .section h2 {
+                font-size: 22px;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) { /* Mobile screens */
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                margin-bottom: 20px;
+            }
+
+            .container {
+                margin-left: 0;
+            }
+
+            .sidebar .navbar-brand {
+                text-align: center;
+            }
+
+            .sidebar .nav-link {
+                text-align: center;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .profile-img {
+                width: 100px;
+            }
+
+            .home h1 {
+                font-size: 24px;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
+
+            .card-body {
+                padding: 15px;
+            }
+
+            /* Adjust cards in sections */
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .card-body {
+                padding: 15px;
+            }
+
+            .text-start {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) { /* Smaller mobile screens */
+            .sidebar {
+                width: 100%;
+                position: relative;
+            }
+
+            .home h1 {
+                font-size: 20px;
+            }
+
+            .section h2 {
+                font-size: 18px;
+            }
+
+            .card-body {
+                padding: 10px;
+            }
+
+            .resume-btn {
+                padding: 10px;
+            }
+        }
+
+        /* Additional small screen tweaks */
+        @media (max-width: 360px) {
+            .sidebar {
+                display: none;
+            }
+
+            .container {
+                margin-left: 0;
+            }
+
+            .dark-mode-toggle {
+                top: 5px;
+                right: 5px;
+            }
+
+            .home h1 {
+                font-size: 18px;
+            }
+
+            .section h2 {
+                font-size: 16px;
+            }
+
+            .card-body {
+                padding: 8px;
+            }
+        }
+    </style>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a class="navbar-brand" href="#">Dhanesh</a>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#education">Education</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#internships">Internships</a>
+            <a class="nav-link" href="#certifications">Certifications</a>
+            <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="container text-center">
+            <img src="C:\Users\HP\Downloads\profile.jpg.jpeg" alt="Profile Picture" class="profile-img">
+            <h1>Mendala Dhanesh</h1>
+            <p>Web Developer | Software Engineer | Cloud Enthusiast</p>
+            <a href="C:\Users\HP\Downloads\DHANESH_RESUME (1).pdf" target="_blank" class="btn btn-light">📥 Download Resume</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="text-primary"><i class="fas fa-user"></i> About Me</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-secondary"><i class="fas fa-info-circle"></i> Personal Information</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-birthday-cake text-danger"></i> <strong>Birthday:</strong> 20 October 2004</li>
+                                <li><i class="fas fa-phone text-success"></i> <strong>Phone:</strong> +91-9966031555</li>
+                                <li><i class="fas fa-map-marker-alt text-primary"></i> <strong>City:</strong> Undavalli</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-user-clock text-warning"></i> <strong>Age:</strong> 20</li>
+                                <li><i class="fas fa-book text-info"></i> <strong>Degree:</strong> Undergraduate</li>
+                                <li><i class="fas fa-envelope text-danger"></i> <strong>Email:</strong> <a href="mailto:dhaneshd890@gmail.com">dhaneshd890@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Education Section -->
+<section id="education" class="section">
+    <div class="container">
+        <h2 class="text-primary"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-light h-100">
+                    <div class="card-body d-flex flex-column align-items-center text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRErB3_znTAhx3HIRy-Uv8uruzyl7qA_Nm_Vg&s" alt="KL University Logo" class="mb-3" width="80">
+                        <h5 class="card-title text-secondary"><i class="fas fa-university text-primary"></i> B.Tech, Computer Science & Engineering</h5>
+                        <p><strong>Duration:</strong> 2022 - 2026</p>
+                        <p><strong>University:</strong> KL University</p>
+                        <p><strong>CGPA:</strong> 8.71/10</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light h-100">
+                    <div class="card-body d-flex flex-column align-items-center text-center">
+                        <img src="https://www.eduska.com/assets/user_logo/705e8b2fa1bb84a4e9e2c57ae1975bcc.jpg" alt="Intermediate College Logo" class="mb-3" width="80">
+                        <h5 class="card-title text-secondary"><i class="fas fa-school text-success"></i> Board of Intermediate Education (Inter)</h5>
+                        <p><strong>Year:</strong> 2022</p>
+                        <p><strong>Board:</strong> BIEAP</p>
+                        <p><strong>Marks:</strong> 744</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light h-100">
+                    <div class="card-body d-flex flex-column align-items-center text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlm-4ANwQGvFkDhLKue57BzeCnseLcud5oFQ&s" alt="School Logo" class="mb-3" width="80">
+                        <h5 class="card-title text-secondary"><i class="fas fa-book-open text-danger"></i> Board of Secondary Education (SSC)</h5>
+                        <p><strong>Year:</strong> 2020</p>
+                        <p><strong>Board:</strong> BSEAP</p>
+                        <p><strong>Percentage:</strong> 95%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-primary"><i class="fas fa-laptop-code"></i> Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-secondary"><i class="fas fa-book text-primary"></i> Online Blogging System</h5>
+                            <p class="card-text">Developed a web-based system using HTML, CSS, and JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-secondary"><i class="fas fa-utensils text-success"></i> Event Management System </h5>
+                            <p class="card-text">Built using React, HTML, and CSS, reducing order processing time by 15%.</p>
+                        </div>
+                    </div>
+                </div>
+                    </section>
+
+   
+    <!-- Certifications Section -->
+   <section id="certifications" class="section">
+    <div class="container">
+        <h2 class="text-start text-primary"><i class="fas fa-certificate"></i> Certifications</h2>
+        <div class="row">
+            <!-- Red Hat Certification -->
+            
+                       <!-- Salesforce AI Associate -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card certification-card text-white">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-brain text-info"></i> Salesforce AI Associate Certified</h5>
+                        <a href="C:\Users\HP\Downloads\Cert5076106_AIAssociate_20241018.pdf" target="_blank">View My Resume (PDF)</a>
+
+                    </div>
+                </div>
+            </div>
+            
+               <!-- AWS Certification -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card certification-card text-white">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fab fa-aws text-warning"></i> AWS Certified Cloud Practitioner</h5>
+                        <a href="https://www.credly.com/badges/a1631584-856c-4578-8679-537f1fdb35cb/public_url" class="btn btn-warning btn-sm" target="_blank">Badge Link</a>
+                    </div>
+                </div>
+            </div>
+     <!-- Multicloud Network Associate Aviatrix Certification -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card certification-card text-white">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fab fa-aws text-warning"></i> Multicloud Network Associate Certified </h5>
+			<a href="https://www.credly.com/badges/48596865-ced7-4365-a0cd-ce6fac21aabd/public_url" class="btn btn-warning btn-sm" target="_blank">Badge Link</a>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automation Anywhere Certification -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card certification-card text-white">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-robot text-success"></i> Automation Anywhere Certified Essentials RPA</h5>
+                        <a href="https://certificates.automationanywhere.com/9c184fa6-5b18-46bd-bf7f-c221c751f15c#acc.QhrOfDYV" class="btn btn-warning btn-sm" target="_blank">Badge Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="text-start text-primary"><i class="fas fa-code"></i> Skills</h2>
+            <div class="row">
+                <!-- Programming Languages -->
+                <div class="col-md-6">
+                    <div class="card skill-card bg-light text-dark d-flex flex-row align-items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3061/3061341.png" class="skill-img">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-terminal text-danger"></i> Programming Languages
+                            </h5>
+                            <p class="card-text">C, Java</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Web Technologies -->
+                <div class="col-md-6">
+                    <div class="card skill-card bg-light text-dark d-flex flex-row align-items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" class="skill-img">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-globe text-success"></i> Web Technologies</h5>
+                            <p class="card-text">MySQL, HTML, CSS, JavaScript</p>
+                        </div>
+                    </div>
+                </div>
+                               <!-- Cloud Platforms -->
+                <div class="col-md-6">
+                    <div class="card skill-card bg-light text-dark d-flex flex-row align-items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" class="skill-img">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fab fa-cloudscale text-warning"></i> Cloud Platforms</h5>
+                            <p class="card-text">AWS, Azure, Google Cloud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container text-center">
+            <h2 class="text-start text-primary"><i class="fas fa-envelope"></i> Contact</h2>
+            <div class="card contact-card bg-light text-dark p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-start">
+                        <p><i class="fas fa-envelope text-danger"></i> Email: <a
+                                href="mailto:dhaneshd890@gmail.com"
+                                class="text-dark">dhaneshd890@gmail.com</a></p>
+                        <p><i class="fas fa-phone text-success"></i> Phone: +91 9966031555</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="social-links d-flex justify-content-center">
+                            <a href="https://www.linkedin.com/in/mendala-dhanesh8898a4288/" target="_blank"
+                                class="mx-2">
+                                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"
+                                    width="40">
+                            </a>
+                                              </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Mendala Dhanesh | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            let toggleButton = document.querySelector('.dark-mode-toggle');
+            toggleButton.innerHTML = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        }
+    </script>
+
+</body>
+
+</html>
+   
